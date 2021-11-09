@@ -10,6 +10,9 @@ import {AuthorService} from 'src/app/Service/author.service';
 export class ImageListComponent implements OnInit {
 
   listImages: Array<any> = [];
+  InitialValue: number = 10;
+  base: number = 5;
+
   constructor(
     private _authorService: AuthorService,
     private router: Router
@@ -26,4 +29,11 @@ export class ImageListComponent implements OnInit {
     })
   }
 
+  imageDetail(imageId: string) {
+    this.router.navigate(["detail/" + imageId])
+  }
+
+  accumulator(value: number): void {
+    this.InitialValue += value
+  }
 }

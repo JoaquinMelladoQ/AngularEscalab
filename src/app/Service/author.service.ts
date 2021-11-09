@@ -17,4 +17,9 @@ export class AuthorService {
     return this._httpClient.get<Array<any>>(url);
   }
 
+  public getOneImage(imageId: string): Observable<Array<any>> {
+    let url = this.URL_API + "detail/" + imageId;
+    return this._httpClient.get<any>(url);
+  }
+
 }

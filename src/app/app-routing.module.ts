@@ -5,11 +5,16 @@ import { ImageListComponent } from './Views/image-list/image-list.component';
 
 const routes: Routes = [
   {
-    path: 'images',
-    component: ImageListComponent
+    path: '',
+    redirectTo: '/images',
+    pathMatch: 'full'
   },
   {
-    path: 'author/:id',
+    path: 'images',
+    component: ImageListComponent,
+  },
+  {
+    path: 'detail/:id',
     component: AuthorListComponent
   }
 ];

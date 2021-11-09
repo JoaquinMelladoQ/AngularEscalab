@@ -2,8 +2,13 @@
   border-radius: 5%;
   height: 80%;
   background: transparent;
+  border: transparent;
 }
 
 img {
   border-radius: 5%;
+}
+
+h1 {
+  color: white;
 }

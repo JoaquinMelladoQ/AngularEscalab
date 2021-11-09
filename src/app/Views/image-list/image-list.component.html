@@ -1,13 +1,31 @@
-<p>image-list works!</p>
-<div class="container">
+<div class="container mb-5">
+  <h1 class="row row-cols-1">{{ InitialValue }}</h1>
+  <h1 class="row row-cols-1">Puedes sumar y restar de {{ base }} en {{ base }}</h1>
+  <div>
+    <button class="btn btn-primary" (click)="accumulator(base)">Sumar</button>
+    <button class="btn btn-secondary" (click)="accumulator(-base)">Restar</button>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div
+    class="spinner-grow"
+    style="width: 3rem; height: 3rem;"
+    role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</ng-template>
+
+<div *ngIf="listImages !== []; else spinner" class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let items of listImages">
       <div class="card">
         <img src="{{ items.download_url }}" class="card-img-top" style="width: 100%;" alt="...">
         <div class="card-body">
-          <button class="btn btn-primary">Ver más</button>
+          <button class="btn btn-primary" (click)="imageDetail(items.author)">Ver más</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
